@@ -19,15 +19,15 @@ var gulp = require('gulp'),
 
 gulp.task('css', function() {
   return gulp.src('scss/**/*.scss')
-    .pipe(plumber()) // This will keeps pipes working after error event
-                     // but it doesnt
     .pipe(compass({
-      config_file: './config.rb'
+      config_file: 'config.rb',
+      css: 'css',
+      sass: 'scss',
     }))
     .pipe(autoprefixer('last 15 version'))
     //is this needed since its specified in my config.rb file
     //.pipe(gulp.dest('css'))
-    .pipe(notify({ message: 'All done, master!' }));
+    .pipe(notify({ message: 'I love you!' }));
 });
 
 gulp.task('watch', function() {
